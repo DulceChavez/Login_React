@@ -1,42 +1,51 @@
 import React, { useState } from "react";
 import swal from "sweetalert";
 function App() {
-  const [Usuario, ValUsua] = useState(false);
-  const [Contraseña, ValContra] = useState(false);
-  const [Error, enviarError] = useState("");
-  //const [Tipo, TipoContraseña] = useState();
-  const usuarios = (e)=>{
-      let usuario =  e.target.value 
-    if(usuario === 'Dulce'){
-      ValUsua (true)
-  }
-  else{
-    ValUsua(false)
-  }
+  const [usuario, setValUsua] = useState(false);
+  const [contraseña, setValContra] = useState(false);
+  const [error, setEnviarError] = useState("");
+  const [tipo, setTipo] = useState("password");
+  const validarUsuarios = (e)=>{
+      let usuarioval =  e.target.value 
+    if(usuarioval === 'Dulce'){
+      setValUsua (true)
+    }
+    else{
+      setValUsua(false)
+    }
 }  
-const contraseñas = (e) =>{
-  let contraseña = e.target.value
-  if(contraseña === "Dulce050603" ){
-    ValContra(true)
-  }
-  else{
-    ValContra(false)
-  }
-}  
+
+  const validarContraseñas = (e) =>{
+    let contraseña = e.target.value
+    if(contraseña === "Dulce050603" ){
+      setValContra(true)
+    }
+    else{
+      setValContra(false)
+    }
+  }  
+
   const enviar =()=>{
     console.log("Enviar")
-    if (Usuario === true && Contraseña === true ){
+    if (usuario === true && contraseña === true ){
       swal({
         title: "Bienvenido",
         icon: "success"
       });
     } 
     else {
-      enviarError("Usuario o Contraseña Incorrectos")
+      setEnviarError("Usuario o Contraseña Incorrectos")
     }
   } 
-  /*const tipo = () =>{
-  }*/
+  const tipoContra = () =>{
+    if(tipo==="password"){
+      setTipo("text")
+    }
+    if(tipo==="text"){
+      setTipo("password")
+    }
+
+  }
 return (
 
   <div className="App">
@@ -46,19 +55,23 @@ return (
         <span className ="material-symbols-outlined">
           account_circle
         </span>
-        <input placeholder="Usuario" onChange={(e) => usuarios(e)}/>
+        <input placeholder="Usuario" onChange={(e) => validarUsuarios(e)}/>
         
         </div>
         <div>
         <span className="material-symbols-outlined">
           lock
         </span>
-          <input type="password " placeholder="Contraseña" onChange={(e) => contraseñas(e)}/> 
-          <button type="onclick" >Ver</button>
+          <input type={tipo} placeholder="Contraseña" onChange={(e) => validarContraseñas(e)}/> 
+          <button onClick={() => tipoContra()}>
+            {
+              (tipo === "password") ? "Ver" : "Ocultar"
+            }
+          </button>
         </div>
         {
-          (Error.length > 1) && (
-            <p>{Error}</p>
+          (error.length > 1) && (
+            <p>{error}</p>
           )
         }
         <button type="onclick" onClick={() => enviar()}>Entrar</button> 

@@ -1,10 +1,5 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -12,19 +7,29 @@ code {
     monospace;
 }
 h1{
-  font-family: 'Chakra Petch', sans-serif;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   text-align: center;
+  margin: 0%;
 }
 #cuadro{
   background-color: #CECECD;
   text-align:  center;
   height: 150px;
 }
+#kenia{
+  height: 70px;
+  padding: 5px;
+  border-radius: 50%;
+}
+#foto{
+  display: grid;
+  align-items: baseline;  
+  grid-template-columns: repeat(2, 33%);
+}
 input{
-  width: 200px;
+  width: 150px;
   height: 20px;
-  border-radius: 9px;
+  border-radius: 5px;
 }
 button{
   border: none;
@@ -33,4 +38,89 @@ button{
   margin: 5px;
   font-weight: bold;
   cursor: pointer;
+  background-color: #C880B7;
+}
+#recuadro{
+  background-color: #F5CCE8;
+  text-align: right;
+  border-radius: 10px;
+  border: 2px solid #D092B6;
+}
+#titulos{
+  text-align: center;
+}
+p{
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+}
+#t1{
+  text-align: center;
+}
+select{
+  background-color: #EBD7FD;
+  font-family: 'Chakra Petch', sans-serif;
+  border: none;
+  border-radius: 9px
+}
+#navegador{
+  background-color: #EBD7FD;
+  text-align: center;
+  font-family: 'Chakra Petch', sans-serif;
+  margin: 5px;
+  border-radius: 5px;
+  height: 25px;
+  border: 2px solid #8B819B;
+}
+span{
+  padding: 10px;
+}
+img{
+  height: 250px;
+  padding: 20px;
+}
+.colUno{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  font-family: 'Quantico', sans-serif;
+  justify-content: center;
+  gap: 1em;
+}
+.icono{
+  height: 45px;
+  padding: 10px;
+}
+.footer{
+  display: flex ;
+  justify-content: center;
+  background-color: #F5CCE8;
+  text-align: right;
+  border-radius: 10px;
+  border: 2px solid #D092B6;
+}
+.maquillaje{
+  display: grid;
+  justify-content: center;
+}
+#titulo{
+  font-family: 'Anton', sans-serif;
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+#descripcion{
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Raleway', sans-serif;
+}
+#imagen{
+  height: 390px;
+  align-content: center;
+}
+.contenido{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: 2em;
+}
+.productos:hover{
+  border: 2px solid #FFD7D5;
 }

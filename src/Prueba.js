@@ -1,25 +1,17 @@
-
+import Header from "./Header";
+import Nav from "./Nav";
+import Article from "./Article";
+import Footer from "./Footer";
+import Body from "./Body";
 function Prueba() {
-  
 return (
 
   <div className="App">
-    <h1>Iniciar Sesión</h1>
-    <div id="cuadro" >
-        <div >
-        <span className ="material-symbols-outlined">
-          account_circle
-        </span>
-        <input placeholder="Usuario" />
-        
-        </div>
-        <div>
-        <span className="material-symbols-outlined">
-          lock
-        </span>
-          <input  placeholder="Contraseña" />
-        </div>
-    </div>
+    <Header/>
+    <Nav></Nav>
+    <Body></Body>
+    <Article></Article>
+    <Footer texto = {"Hola"}/>
   </div> 
   );
 }
